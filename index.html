@@ -3,64 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8월 19일 맥체인 성경읽기 (하나님의 절대 주권: 선택, 구원, 그리고 심판)</title>
+    <title>8월 19일 맥체인 성경읽기</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+        
         body {
             font-family: 'Noto Sans KR', sans-serif;
             line-height: 1.8;
-            background-color: #f4f7f9;
             color: #333;
+            background-color: #f4f4f9;
             margin: 0;
-            padding: 0;
+            padding: 20px;
         }
+
         .container {
             max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+            margin: 0 auto;
             background-color: #ffffff;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
         }
-        h1, h2, h3 {
+
+        header {
+            padding: 40px 40px 20px 40px;
+            text-align: center;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        h1 {
+            font-size: 2.2em;
             font-weight: 700;
             color: #2c3e50;
+            margin: 0;
         }
-        h1 {
-            text-align: center;
-            font-size: 2.2em;
-            margin-bottom: 5px;
+
+        h1 .subtitle {
+            display: block;
+            font-size: 0.7em;
+            color: #555;
+            font-weight: 400;
+            margin-top: 10px;
         }
-        .subtitle {
-            text-align: center;
+
+        .reading-list {
             font-size: 1.1em;
-            color: #7f8c8d;
-            margin-top: 0;
-            margin-bottom: 30px;
+            color: #868e96;
+            margin-top: 15px;
+            font-weight: 500;
         }
+
         .chapter-card {
-            margin-bottom: 30px;
-            padding: 25px;
+            margin: 20px;
+            padding: 30px;
             border-radius: 8px;
             border-left: 5px solid;
             background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
             transition: box-shadow 0.3s ease;
         }
+        
         .chapter-card:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
         }
+
         .card-book1 { border-left-color: #4285F4; }
         .card-book2 { border-left-color: #DB4437; }
         .card-book3 { border-left-color: #F4B400; }
         .card-book4 { border-left-color: #0F9D58; }
         .integration-card { border-left-color: #808080; }
 
-        .card-book1 h2, .card-book1 .bible-text strong { color: #4285F4; }
-        .card-book2 h2, .card-book2 .bible-text strong { color: #DB4437; }
-        .card-book3 h2, .card-book3 .bible-text strong { color: #F4B400; }
-        .card-book4 h2, .card-book4 .bible-text strong { color: #0F9D58; }
-        .integration-card h2 { color: #808080; }
+        h2 {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #34495e;
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 4px solid #bdc3c7;
+        }
+        
+        .bible-text {
+            background-color: #fdfdfd;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ecf0f1;
+            margin-top: 15px;
+        }
+        
+        .bible-text div {
+            margin-bottom: 10px;
+        }
 
         .verse-number {
             font-weight: 700;
@@ -68,18 +111,28 @@
             margin-right: 8px;
             font-size: 0.9em;
         }
-        .bible-text div {
-            margin-bottom: 10px;
-        }
+
         .bible-text strong {
             display: block;
-            margin-bottom: 10px;
             font-size: 1.1em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
         }
+        .card-book1 .bible-text strong { color: #4285F4; }
+        .card-book2 .bible-text strong { color: #DB4437; }
+        .card-book3 .bible-text strong { color: #F4B400; }
+        .card-book4 .bible-text strong { color: #0F9D58; }
+
         ul {
             list-style-type: none;
             padding-left: 0;
         }
+
+        li {
+            margin-bottom: 20px;
+        }
+
         .key-verse {
             font-weight: 400;
             color: #2c3e50;
@@ -90,483 +143,572 @@
             border-radius: 4px;
             line-height: 1.6;
         }
+
         .key-verse strong {
             font-weight: 700;
             margin-right: 10px;
             color: #34495e;
         }
+
         .commentary-text {
             color: #555;
             margin-top: 0;
             padding-left: 19px;
             line-height: 1.7;
         }
+
+        .analysis-svg {
+            width: 100%;
+            margin: 20px 0;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        
         .analysis-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
         }
+        
         .analysis-table th, .analysis-table td {
             border: 1px solid #ddd;
             padding: 12px;
             text-align: left;
         }
+        
         .analysis-table th {
-            background-color: #ecf0f1;
+            background-color: #f2f2f2;
             font-weight: 700;
         }
+
         footer {
             text-align: center;
-            margin-top: 40px;
             padding: 20px;
+            margin-top: 30px;
             font-size: 0.9em;
-            color: #95a5a6;
+            color: #777;
+            background-color: #f8f9fa;
         }
-        .audio-control-button {
+
+        #audio-controls {
             position: fixed;
             top: 20px;
             right: 20px;
-            padding: 10px 15px;
-            background-color: #34495e;
+            z-index: 1000;
+        }
+
+        #play-pause-btn {
+            padding: 10px 20px;
+            font-size: 1em;
+            font-weight: 500;
+            background-color: #3498db;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 20px;
             cursor: pointer;
-            font-size: 1em;
-            z-index: 1000;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: background-color 0.3s, transform 0.2s;
         }
-        .audio-control-button:disabled {
+
+        #play-pause-btn:disabled {
             background-color: #95a5a6;
             cursor: not-allowed;
         }
-        #player {
+
+        #play-pause-btn:not(:disabled):hover {
+            background-color: #2980b9;
+            transform: translateY(-1px);
+        }
+        
+        #player-container {
             position: absolute;
             left: -9999px;
             top: -9999px;
             width: 1px;
             height: 1px;
         }
-        .svg-container {
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 15px;
-            margin: 20px 0;
-            background-color: #fdfdfd;
-        }
     </style>
 </head>
 <body>
 
-    <div id="player"></div>
-    <button id="audio-control" class="audio-control-button" disabled>오디오 로딩 중...</button>
+    <div id="audio-controls">
+        <button id="play-pause-btn" disabled>오디오 로딩 중...</button>
+    </div>
+    <div id="player-container"></div>
 
     <div class="container">
-        <h1>8월 19일 맥체인 성경읽기 (하나님의 절대 주권: 선택, 구원, 그리고 심판)</h1>
-        <p class="subtitle">사무엘상 11장, 로마서 9장, 예레미야 48장, 시편 25편</p>
+        <header>
+            <h1 id="main-title">8월 19일 맥체인 성경읽기</h1>
+            <p class="reading-list">사무엘상 11장, 로마서 9장, 예레미야 48장, 시편 25편</p>
+        </header>
 
-        <div class="chapter-card card-book1">
-            <h2>사무엘상 11장 분석</h2>
-            <h3>개요 (Overview)</h3>
-            <p>사무엘상 11장은 암몬 족속의 위협 앞에서 사울이 어떻게 이스라엘의 구원자로 공식적인 인정을 받게 되는지를 보여줍니다. 암몬 왕 나하스가 길르앗 야베스 주민들의 오른 눈을 빼는 조건으로 화친을 맺으려 하자, 이 소식을 들은 사울에게 여호와의 영이 강하게 임합니다. 그는 이스라엘 군대를 소집하여 암몬을 대파하고, 이 승리를 통해 온 백성에게 왕으로 확고히 인정받으며 길갈에서 왕정의 시작을 공식화합니다.</p>
-            <h3>시각적 분석 (Visual Analysis)</h3>
-            <div class="svg-container">
-                <svg width="100%" height="220" viewBox="0 0 800 220">
-                    <style>.txt-sm{font-size:14px;} .txt-md{font-size:16px;} .txt-lg{font-size:18px; font-weight:bold;} .arr{marker-end:url(#arrow_blue); stroke:#4285F4; stroke-width:2.5;}</style>
-                    <defs><marker id="arrow_blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4285F4"/></marker></defs>
-                    
-                    <rect x="20" y="20" width="220" height="180" rx="10" fill="#f0f4ff" />
-                    <text x="130" y="50" class="txt-lg" text-anchor="middle">1. 위협과 모욕</text>
-                    <text x="130" y="90" text-anchor="middle" class="txt-md">암몬 족속 나하스</text>
-                    <text x="130" y="110" text-anchor="middle" class="txt-sm">"너희 오른 눈을 다 빼어야..."</text>
-                    <text x="130" y="150" text-anchor="middle" class="txt-md" fill="#DB4437">길르앗 야베스의 절망</text>
-
-                    <line x1="250" y1="110" x2="310" y2="110" class="arr"/>
-
-                    <rect x="320" y="20" width="220" height="180" rx="10" fill="#e3f2fd"/>
-                    <text x="430" y="50" class="txt-lg" text-anchor="middle">2. 성령의 임재</text>
-                    <text x="430" y="90" text-anchor="middle" class="txt-md">밭 갈던 사울</text>
-                    <path d="M 400 110 L 430 140 L 460 110" stroke="#F4B400" stroke-width="3" fill="none"/>
-                    <text x="430" y="160" text-anchor="middle" class="txt-md" fill="#4285F4">"하나님의 영이 크게 임하매"</text>
-
-                    <line x1="550" y1="110" x2="610" y2="110" class="arr"/>
-
-                    <rect x="620" y="20" width="160" height="180" rx="10" fill="#dcedc8"/>
-                    <text x="700" y="50" class="txt-lg" text-anchor="middle">3. 구원과 인정</text>
-                    <text x="700" y="90" text-anchor="middle" class="txt-md">암몬 격파</text>
-                    <text x="700" y="110" text-anchor="middle" class="txt-sm">(하나님의 승리)</text>
-                    <text x="700" y="150" text-anchor="middle" class="txt-md" fill="#0F9D58">왕으로 추대됨</text>
-                </svg>
-            </div>
-            <h3>배경지식 및 신학적 통찰 (Context & Theology)</h3>
-            <p>이 사건은 사울이 왕으로서의 자격을 증명하는 첫 번째 시험대였습니다. 밭을 갈던 평범한 청년 사울은 '하나님의 영'에 감동될 때 비로소 지도자의 권위와 능력을 발휘합니다. 이는 이스라엘의 왕은 자신의 힘이 아니라 하나님의 능력으로 백성을 구원해야 함을 보여줍니다. 소 두 마리를 각을 떠서 백성에게 보내는 사울의 행동은, 고대 이스라엘에서 언약을 어긴 자에게 행하는 저주 의식을 연상시키며, 온 백성이 이 구원 사역에 동참해야 할 당위성을 부여하는 강력한 메시지였습니다. 이 승리를 통해 사울은 개인적인 기름부음을 넘어, 백성 전체로부터 공식적인 왕으로 인정받게 됩니다.</p>
-            <h3>주요 구절 해설 (Key Verse Commentary)</h3>
-            <ul>
-                <li>
-                    <p class="key-verse"><strong>사무엘상 11:6</strong> 사울이 이 말을 들을 때에 하나님의 영에게 크게 감동되매 그의 노가 크게 일어나</p>
-                    <p class="commentary-text">사울의 분노는 개인적인 감정이 아니라, 하나님의 백성이 당하는 모욕에 대한 '거룩한 분노'였습니다. 이는 '하나님의 영'이 주시는 마음으로, 리더가 가져야 할 중요한 성품입니다. 하나님의 영은 한 개인을 변화시켜 하나님의 구원 사역의 도구로 사용하십니다.</p>
-                </li>
-                <li>
-                    <p class="key-verse"><strong>사무엘상 11:13</strong> 사울이 이르되 이 날에는 사람을 죽이지 못하리니 오늘 여호와께서 이스라엘 중에 구원을 베푸셨음이니라</p>
-                    <p class="commentary-text">자신을 멸시했던 자들을 처벌하자는 요구에 대해 사울은 관용을 베풉니다. 그는 이 승리가 자신의 공로가 아니라 '여호와께서 베푸신 구원'임을 분명히 인지하고 있었습니다. 이 모습은 지도자로서 사울의 가장 긍정적인 면모 중 하나이며, 모든 영광을 하나님께 돌리는 신앙인의 자세를 보여줍니다.</p>
-                </li>
-            </ul>
-            <h3>성경 본문 (Full Text)</h3>
-            <div class="bible-text">
-                <strong>사울이 암몬을 물리치다</strong>
-                <div><span class="verse-number">1</span>암몬 사람 나하스가 올라와서 길르앗 야베스에 맞서 진 치매 야베스 모든 사람이 나하스에게 이르되 우리와 언약하자 그리하면 우리가 너를 섬기리라 하니</div>
-                <div><span class="verse-number">2</span>나하스가 그들에게 이르되 내가 너희 오른 눈을 다 빼야 너희와 언약하리라 내가 온 이스라엘을 이같이 모욕하리라</div>
-                <div><span class="verse-number">3</span>야베스 장로들이 그에게 이르되 우리에게 이레 동안 말미를 주어 우리가 이스라엘 온 지역에 전령들을 보내게 하라 만일 우리를 구원할 자가 없으면 네게 나아가리라 하니라</div>
-                <div><span class="verse-number">4</span>이에 전령들이 사울이 사는 기브아에 이르러 이 말을 백성에게 전하매 모든 백성이 소리를 높여 울더니</div>
-                <div><span class="verse-number">5</span>마침 사울이 밭에서 소를 몰고 오다가 이르되 백성이 무슨 일로 우느냐 하니 그들이 야베스 사람의 말을 전하니라</div>
-                <div><span class="verse-number">6</span>사울이 이 말을 들을 때에 하나님의 영에게 크게 감동되매 그의 노가 크게 일어나</div>
-                <div><span class="verse-number">7</span>한 겨리의 소를 잡아 각을 뜨고 전령들의 손으로 그것을 이스라엘 모든 지역에 두루 보내어 이르되 누구든지 나와서 사울과 사무엘을 따르지 아니하면 그의 소들도 이와 같이 하리라 하였더니 여호와의 두려움이 백성에게 임하매 그들이 한사람 같이 나온지라</div>
-                <div><span class="verse-number">8</span>사울이 베섹에서 그들의 수를 세어 보니 이스라엘 자손이 삼십만 명이요 유다 사람이 삼만 명이더라</div>
-                <div><span class="verse-number">9</span>무리가 와 있던 전령들에게 이르되 너희는 길르앗 야베스 사람에게 이같이 이르기를 내일 해가 더울 때에 너희가 구원을 받으리라 하라 전령들이 돌아가서 야베스 사람들에게 전하매 그들이 기뻐하니라</div>
-                <div><span class="verse-number">10</span>야베스 사람들이 이에 이르되 우리가 내일 너희에게 나아가리니 너희 생각에 좋을 대로 우리에게 다 행하라 하니라</div>
-                <div><span class="verse-number">11</span>이튿날 사울이 백성을 삼 대로 나누고 새벽에 적진 한가운데로 들어가서 날이 더울 때까지 암몬 사람들을 치매 남은 자가 다 흩어져서 둘도 함께 한 자가 없었더라</div>
-                <div><span class="verse-number">12</span>백성이 사무엘에게 이르되 사울이 어찌 우리를 다스리겠느냐 한 자가 누구니이까 그들을 끌어내소서 우리가 죽이겠나이다</div>
-                <div><span class="verse-number">13</span>사울이 이르되 이 날에는 사람을 죽이지 못하리니 오늘 여호와께서 이스라엘 중에 구원을 베푸셨음이니라</div>
-                <div><span class="verse-number">14</span>사무엘이 백성에게 이르되 오라 우리가 길갈로 가서 나라를 새롭게 하자</div>
-                <div><span class="verse-number">15</span>모든 백성이 길갈로 가서 거기서 여호와 앞에서 사울을 왕으로 삼고 길갈에서 여호와 앞에 화목제를 드리고 사울과 이스라엘 모든 사람이 거기서 크게 기뻐하니라</div>
-            </div>
-        </div>
-
-        <div class="chapter-card card-book2">
-            <h2>로마서 9장 분석</h2>
-            <h3>개요 (Overview)</h3>
-            <p>로마서 9장은 성경에서 가장 심오하고 논쟁적인 주제 중 하나인 '하나님의 선택(예정)' 교리를 다룹니다. 바울은 자신의 동족 이스라엘의 불신앙에 대한 깊은 고뇌로 시작하여, 구원이 혈통이나 인간의 행위에 달린 것이 아니라 전적으로 하나님의 주권적인 선택과 긍휼에 달려 있음을 논증합니다. 이를 위해 야곱과 에서, 토기장이와 진흙의 비유를 들어 하나님의 절대 주권을 변호하며, 이스라엘의 실패에도 불구하고 남은 자를 통해 구원의 약속이 이어진다고 말합니다.</p>
-            <h3>시각적 분석 (Visual Analysis)</h3>
-            <div class="svg-container">
-                <svg width="100%" height="250" viewBox="0 0 800 250">
-                    <style>.txt-sm{font-size:14px;} .txt-md{font-size:16px;} .txt-lg{font-size:18px; font-weight:bold;} .txt-err{font-size:16px; font-weight:bold; fill:#DB4437;}</style>
-                    <text x="400" y="35" class="txt-lg" text-anchor="middle">토기장이의 주권</text>
-                    
-                    <path d="M 350 80 C 300 120, 300 200, 350 240" stroke="#a1887f" stroke-width="4" fill="none"/>
-                    <path d="M 450 80 C 500 120, 500 200, 450 240" stroke="#a1887f" stroke-width="4" fill="none"/>
-                    
-                    <ellipse cx="400" cy="220" rx="60" ry="15" fill="#bcaaa4"/>
-                    <path d="M 360 120 C 380 150, 420 150, 440 120 L 440 220 L 360 220 Z" fill="#d7ccc8"/>
-                    <text x="400" y="110" text-anchor="middle" class="txt-md">하나님의 절대 주권</text>
-                    
-                    <g>
-                        <path d="M 200 160 C 180 200, 240 200, 220 160" stroke="#ffc107" stroke-width="3" fill="#fff9c4"/>
-                        <text x="210" y="150" text-anchor="middle" class="txt-md" fill="#b26a00">긍휼의 그릇</text>
-                        <text x="210" y="170" text-anchor="middle" class="txt-sm">(야곱, 남은 자)</text>
-                    </g>
-                     <g>
-                        <path d="M 580 160 C 560 200, 620 200, 600 160" stroke="#757575" stroke-width="3" fill="#e0e0e0"/>
-                        <text x="590" y="150" text-anchor="middle" class="txt-md" fill="#424242">진노의 그릇</text>
-                        <text x="590" y="170" text-anchor="middle" class="txt-sm">(에서, 바로)</text>
-                    </g>
-
-                    <path d="M 360 170 Q 280 170, 240 170" stroke="#ccc" stroke-width="2" marker-end="url(#arrow_red)"/>
-                    <path d="M 440 170 Q 520 170, 560 170" stroke="#ccc" stroke-width="2" marker-end="url(#arrow_red)"/>
-                    <text x="400" y="195" text-anchor="middle" class="txt-err">"누가 주를 대적하리요"</text>
-                    <defs><marker id="arrow_red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#DB4437"/></marker></defs>
-                </svg>
-            </div>
-            <h3>배경지식 및 신학적 통찰 (Context & Theology)</h3>
-            <p>유대인들은 아브라함의 혈통이라는 선민의식과 율법 준수를 구원의 조건으로 생각했습니다. 바울은 이러한 생각을 정면으로 반박합니다. 그는 리브가의 태중에 있던 야곱과 에서의 예를 들어, 그들이 태어나서 어떤 선이나 악을 행하기도 전에 하나님의 주권적인 사랑과 미움(선택과 유기)이 결정되었음을 보여줍니다. 또한 바로 왕의 예를 통해, 하나님께서 자신의 영광을 드러내시기 위해 악한 통치자조차도 주권적으로 사용하심을 설명합니다. 이는 구원이 인간의 자격이나 노력에 근거하는 것이 아니라, 오직 하나님의 자유롭고 주권적인 은혜에 달려있다는 '선택' 교리의 핵심입니다. 이는 인간의 교만을 꺾고, 오직 하나님께만 모든 영광을 돌리게 하는 중요한 진리입니다.</p>
-            <h3>주요 구절 해설 (Key Verse Commentary)</h3>
-            <ul>
-                <li>
-                    <p class="key-verse"><strong>로마서 9:16</strong> 그런즉 원하는 자로 말미암음도 아니요 달음박질하는 자로 말미암음도 아니요 오직 긍휼히 여기시는 하나님으로 말미암음이니라</p>
-                    <p class="commentary-text">구원의 주도권이 전적으로 하나님께 있음을 선포하는 핵심 구절입니다. 인간의 열심이나 노력, 의지("원하는 자", "달음박질하는 자")가 구원의 근거가 될 수 없으며, 오직 하나님의 일방적이고 주권적인 '긍휼'만이 구원의 유일한 원인임을 명확히 합니다.</p>
-                </li>
-                <li>
-                    <p class="key-verse"><strong>로마서 9:21</strong> 토기장이가 진흙 한 덩이로 하나는 귀히 쓸 그릇을, 하나는 천히 쓸 그릇을 만들 권한이 없느냐</p>
-                    <p class="commentary-text">하나님의 절대 주권에 대해 항변하려는 인간의 교만함을 질책하는 말씀입니다. 창조주이신 하나님은 피조물인 인간에게 자신의 선택에 대해 설명하거나 변명할 의무가 없으시며, 자신의 뜻대로 모든 것을 행하실 절대적인 권한을 가지신 분임을 비유를 통해 강력하게 선포합니다.</p>
-                </li>
-            </ul>
-            <h3>성경 본문 (Full Text)</h3>
-            <div class="bible-text">
-                <strong>하나님의 선택</strong>
-                <div><span class="verse-number">1</span>내가 그리스도 안에서 참말을 하고 거짓말을 아니하노라 나에게 큰 근심이 있는 것과 마음에 그치지 않는 고통이 있는 것을 내 양심이 성령 안에서 나와 더불어 증언하노니</div>
-                <div><span class="verse-number">2</span>나의 형제 곧 골육의 친척을 위하여 내 자신이 저주를 받아 그리스도에게서 끊어질지라도 원하는 바로라</div>
-                <div><span class="verse-number">3</span>그들은 이스라엘 사람이라 그들에게는 양자 됨과 영광과 언약들과 율법을 세우신 것과 예배와 약속들이 있고</div>
-                <div><span class="verse-number">4</span>조상들도 그들의 것이요 육신으로 하면 그리스도가 그들에게서 나셨으니 그는 만물 위에 계셔서 세세에 찬양을 받으실 하나님이시니라 아멘</div>
-                <div><span class="verse-number">5</span>그러나 하나님의 말씀이 폐하여진 것 같지 않도다 이스라엘에게서 난 그들이 다 이스라엘이 아니요</div>
-                <div><span class="verse-number">6</span>또한 아브라함의 씨가 다 그의 자녀가 아니라 오직 이삭으로부터 난 자라야 네 씨라 불리리라 하셨으니</div>
-                <div><span class="verse-number">7</span>곧 육신의 자녀가 하나님의 자녀가 아니요 오직 약속의 자녀가 씨로 여기심을 받느니라</div>
-                <div><span class="verse-number">8</span>약속의 말씀은 이것이니 명년 이 때에 내가 이르리니 사라에게 아들이 있으리라 하심이라</div>
-                <div><span class="verse-number">9</span>그뿐 아니라 또한 리브가가 우리 조상 이삭 한 사람으로 말미암아 임신하였는데</div>
-                <div><span class="verse-number">10</span>그 자식들이 아직 나지도 아니하고 무슨 선이나 악을 행하지 아니한 때에 택하심을 따라 되는 하나님의 뜻이 행위로 말미암지 않고 오직 부르시는 이로 말미암아 서게 하려 하사</div>
-                <div><span class="verse-number">11</span>리브가에게 이르시되 큰 자가 어린 자를 섬기리라 하셨나니</div>
-                <div><span class="verse-number">12</span>기록된 바 내가 야곱은 사랑하고 에서는 미워하였다 하심과 같으니라</div>
-                <strong>하나님의 진노와 긍휼</strong>
-                <div><span class="verse-number">13</span>그런즉 우리가 무슨 말을 하리요 하나님께 불의가 있느냐 그럴 수 없느니라</div>
-                <div><span class="verse-number">14</span>모세에게 이르시되 내가 긍휼히 여길 자를 긍휼히 여기고 불쌍히 여길 자를 불쌍히 여기리라 하셨으니</div>
-                <div><span class="verse-number">15</span>그런즉 원하는 자로 말미암음도 아니요 달음박질하는 자로 말미암음도 아니요 오직 긍휼히 여기시는 하나님으로 말미암음이니라</div>
-                <div><span class="verse-number">16</span>성경이 바로에게 이르시되 내가 이 일을 위하여 너를 세웠으니 곧 너로 말미암아 내 능력을 보이고 내 이름이 온 땅에 전파되게 하려 함이라 하셨으니</div>
-                <div><span class="verse-number">17</span>그런즉 하나님께서 하고자 하시는 자를 긍휼히 여기시고 하고자 하시는 자를 완악하게 하시느니라</div>
-                <div><span class="verse-number">18</span>혹 네가 내게 말하기를 그러면 하나님이 어찌하여 허물하시느냐 누가 그 뜻을 대적하느냐 하리니</div>
-                <div><span class="verse-number">19</span>이 사람아 네가 누구이기에 감히 하나님께 반문하느냐 지음을 받은 물건이 지은 자에게 어찌 나를 이같이 만들었느냐 말하겠느냐</div>
-                <div><span class="verse-number">20</span>토기장이가 진흙 한 덩이로 하나는 귀히 쓸 그릇을, 하나는 천히 쓸 그릇을 만들 권한이 없느냐</div>
-                <div><span class="verse-number">21</span>만일 하나님이 그의 진노를 보이시고 그의 능력을 알게 하고자 하사 멸하기로 준비된 진노의 그릇을 오래 참으심으로 관용하시고</div>
-                <div><span class="verse-number">22</span>또한 영광 받기로 예비하신 바 긍휼의 그릇에 대하여 그 영광의 풍성함을 알게 하고자 하셨을지라도 무슨 말을 하리요</div>
-                <div><span class="verse-number">23</span>이 그릇은 우리니 곧 유대인 중에서뿐 아니라 이방인 중에서도 부르신 자니라</div>
-                <strong>이스라엘의 남은 자</strong>
-                <div><span class="verse-number">24</span>호세아의 글에도 이르기를 내가 내 백성 아닌 자를 내 백성이라, 사랑하지 아니한 자를 사랑한 자라 부르리라</div>
-                <div><span class="verse-number">25</span>너희는 내 백성이 아니라 한 그 곳에서 그들이 살아 계신 하나님의 아들이라 일컬음을 받으리라 함과 같으니라</div>
-                <div><span class="verse-number">26</span>또 이사야가 이스라엘에 관하여 외치되 이스라엘 자손들의 수가 비록 바다의 모래 같을지라도 남은 자만 구원을 받으리니</div>
-                <div><span class="verse-number">27</span>주께서 땅 위에서 그 말씀을 이루고 속히 시행하시리라 하셨느니라</div>
-                <div><span class="verse-number">28</span>또한 이사야가 미리 말한 바 만일 만군의 주께서 우리에게 씨를 남겨 두지 아니하셨더라면 우리가 소돔과 같이 되고 고모라와 같았으리로다 함과 같으니라</div>
-                <div><span class="verse-number">29</span>그런즉 우리가 무슨 말을 하리요 의를 따르지 아니한 이방인들이 의를 얻었으니 곧 믿음에서 난 의요</div>
-                <div><span class="verse-number">30</span>의의 법을 따라간 이스라엘은 율법에 이르지 못하였으니</div>
-                <div><span class="verse-number">31</span>어찌 그러하냐 이는 그들이 믿음을 의지하지 않고 행위를 의지함이라 부딪칠 돌에 부딪쳤느니라</div>
-                <div><span class="verse-number">32</span>기록된 바 보라 내가 걸림돌과 거치는 바위를 시온에 두노니 그를 믿는 자는 부끄러움을 당하지 아니하리라 함과 같으니라</div>
-            </div>
-        </div>
-
-        <div class="chapter-card card-book3">
-            <h2>예레미야 48장 분석</h2>
-            <h3>개요 (Overview)</h3>
-            <p>예레미야 48장은 이스라엘의 인접국 모압에 대한 길고 상세한 심판 예언입니다. 모압의 죄악, 특히 그들의 교만과 자만, 그리고 그모스 우상 숭배를 지적하며, 하나님의 심판이 그들의 모든 성읍과 명성에 임하여 완전히 황폐하게 될 것을 선포합니다. 예언의 준엄함 속에서도 그들의 멸망을 슬퍼하는 선지자의 애통함이 묻어나는 것이 특징입니다.</p>
-            <h3>시각적 분석 (Visual Analysis)</h3>
-             <div class="svg-container">
-                <svg width="100%" height="250" viewBox="0 0 800 250">
-                    <style>.txt-md{font-size:16px;} .txt-lg{font-size:18px; font-weight:bold;}.txt-cap{font-size:14px; text-anchor:middle;}</style>
-                    <defs>
-                        <filter id="shadow" x="0" y="0" width="200%" height="200%"><feOffset result="offOut" in="SourceAlpha" dx="3" dy="3" /><feGaussianBlur result="blurOut" in="offOut" stdDeviation="3" /><feBlend in="SourceGraphic" in2="blurOut" mode="normal" /></filter>
-                    </defs>
-                    
-                    <path d="M 200 220 Q 250 100, 400 120 T 600 220" stroke="#a1887f" fill="#d7ccc8" filter="url(#shadow)"/>
-                    <text x="400" y="60" class="txt-lg" text-anchor="middle">교만의 잔, 모압</text>
-                    <text x="400" y="90" class="txt-md" text-anchor="middle" fill="#DB4437">"내가...심히 교만하도다"</text>
-                    <path d="M 220 200 A 180 100 0 0 0 580 200" fill="#c2185b" opacity="0.7"/>
-                    <text x="400" y="180" class="txt-md" text-anchor="middle" fill="white">안일과 자만</text>
-
-                    <g transform="translate(620, 100) rotate(20)">
-                        <path d="M 0 0 L 20 10 L 0 20 L 5 10 Z" fill="#F4B400"/>
-                        <rect x="5" y="8" width="80" height="4" fill="#F4B400"/>
-                        <text x="45" y="-5" class="txt-md" fill="#8d6e63" transform="rotate(-20)">여호와의 심판</text>
-                    </g>
-                    
-                    <g transform="translate(100, 150)">
-                        <path d="M0,0 L20,20 L10,25 L5,10 Z" fill="#757575" opacity="0.5" transform="rotate(20)"/>
-                        <path d="M30,5 L50,25 L40,30 L35,15 Z" fill="#757575" opacity="0.5" transform="rotate(-10)"/>
-                        <text x="30" y="50" class="txt-cap">깨어진 그릇, 흩어진 백성</text>
-                    </g>
-                </svg>
-             </div>
-            <h3>배경지식 및 신학적 통찰 (Context & Theology)</h3>
-            <p>모압은 롯의 후손으로 이스라엘과 친족 관계였지만, 역사적으로 계속해서 이스라엘을 대적했습니다. 하나님은 모압의 가장 큰 죄악으로 '교만'을 반복해서 지적하십니다(29-30, 42절). 그들은 자신들의 부와 견고한 성읍, 강력한 군대를 의지하며 안일하게 지냈습니다. "포도주를 옮겨 담지 않아 그 맛이 남아있는" 것에 비유된 그들의 안일함은 결국 하나님의 심판을 통해 완전히 깨어지고 흩어지게 됩니다. 이는 하나님께서 인간의 교만을 가장 싫어하시며, 스스로를 높이는 모든 세력을 반드시 낮추시는 분임을 보여주는 강력한 사례입니다. 또한, 이방 나라를 심판하시는 하나님의 모습은 그분의 통치가 이스라엘을 넘어 온 세상에 미침을 증거합니다.</p>
-            <h3>주요 구절 해설 (Key Verse Commentary)</h3>
-            <ul>
-                <li>
-                    <p class="key-verse"><strong>예레미야 48:29</strong> 우리가 모압의 교만을 들었나니 심한 교만 곧 그의 자고와 오만과 자랑과 그 마음의 거만이로다</p>
-                    <p class="commentary-text">다양한 단어를 반복 사용하여 모압의 죄의 핵심이 뿌리 깊은 '교만'임을 강조합니다. 자기 자신을 높이고 의지하는 것이 하나님 앞에서 얼마나 큰 죄악인지를 보여주며, 이것이 그들의 멸망의 근본 원인이었음을 지적합니다.</p>
-                </li>
-                <li>
-                    <p class="key-verse"><strong>예레미야 48:42</strong> 모압이 여호와를 거슬러 자만하였으므로 멸망하고 다시 나라를 이루지 못하리로다</p>
-                    <p class="commentary-text">심판의 원인과 결과를 명확하게 연결합니다. 하나님을 대적하는 '자만'의 끝은 완전한 '멸망'입니다. 이는 개인과 국가를 향한 하나님의 영원한 원리이며, 하나님 앞에서 겸손해야 할 이유를 분명하게 보여줍니다.</p>
-                </li>
-            </ul>
-            <h3>성경 본문 (Full Text)</h3>
-            <div class="bible-text">
-                <strong>모압에 대한 경고</strong>
-                <div><span class="verse-number">1</span>모압에 관한 것이라 만군의 여호와 이스라엘의 하나님께서 이와 같이 말씀하시되 슬프다 느보여 그것이 황폐되었도다 기랴다임이 수치를 당하여 점령되었고 미스갑이 수치를 당하여 파괴되었으니... (이하 48장 전체)</div>
-                <div>(예레미야 48장은 매우 길어 전문 수록을 생략합니다. 주요 내용은 모압의 여러 성읍들(헤스본, 디본, 아로엘 등)이 당할 파멸과 백성들의 슬픔, 그리고 그 원인이 된 모압의 교만에 대한 상세한 묘사입니다.)</div>
-            </div>
-        </div>
-        
-        <div class="chapter-card card-book4">
-            <h2>시편 25편 분석</h2>
-            <h3>개요 (Overview)</h3>
-            <p>시편 25편은 답관체(Acrostic) 형식으로 쓰인 지혜시이자 탄원시입니다. 시인은 원수들로 인한 고통과 자신의 죄 문제 앞에서 하나님을 향한 신뢰를 고백하며, 주의 길을 가르쳐 주시고(인도), 죄를 용서해 주시며(용서), 원수로부터 구원해 주실 것(보호)을 간구합니다. 시편 전체에 걸쳐 하나님의 언약적 신실하심(헤세드, 인자)에 대한 믿음이 깊이 배어 있습니다.</p>
-            <h3>시각적 분석 (Visual Analysis)</h3>
-             <div class="svg-container">
-                <svg width="100%" height="250" viewBox="0 0 800 250">
-                    <style>.txt-sm{font-size:14px;}.txt-md{font-size:16px;}.txt-lg{font-size:18px; font-weight:bold;}</style>
-                    <defs>
-                        <linearGradient id="pathGradient" x1="0" y1="1" x2="0" y2="0">
-                            <stop offset="0%" stop-color="#2e7d32" />
-                            <stop offset="100%" stop-color="#a5d6a7" />
-                        </linearGradient>
-                    </defs>
-                    <text x="400" y="35" class="txt-lg" text-anchor="middle">여호와를 향한 영혼의 여정</text>
-                    <path d="M 50 230 C 150 180, 250 240, 400 200 C 550 160, 650 220, 750 180" stroke="#424242" fill="#f5f5f5" stroke-width="2"/>
-                    <text x="150" y="220" class="txt-md" fill="#757575">고독과 괴로움</text>
-                    <text x="650" y="210" class="txt-md" fill="#757575">원수와 죄악</text>
-
-                    <path d="M 400 200 C 350 150, 450 100, 400 50" stroke="url(#pathGradient)" fill="none" stroke-width="8" stroke-linecap="round"/>
-
-                    <g>
-                        <circle cx="380" cy="170" r="15" fill="white" stroke="#0F9D58" stroke-width="2"/>
-                        <text x="380" y="175" text-anchor="middle" class="txt-sm" fill="#0F9D58">인도</text>
-                    </g>
-                    <g>
-                        <circle cx="430" cy="130" r="15" fill="white" stroke="#0F9D58" stroke-width="2"/>
-                        <text x="430" y="135" text-anchor="middle" class="txt-sm" fill="#0F9D58">용서</text>
-                    </g>
-                     <g>
-                        <circle cx="390" cy="90" r="15" fill="white" stroke="#0F9D58" stroke-width="2"/>
-                        <text x="390" y="95" text-anchor="middle" class="txt-sm" fill="#0F9D58">보호</text>
-                    </g>
-
-                    <text x="400" y="60" text-anchor="middle" class="txt-lg" fill="#0F9D58">"주의 인자와 긍휼"</text>
-                </svg>
-             </div>
-            <h3>배경지식 및 신학적 통찰 (Context & Theology)</h3>
-            <p>이 시는 히브리 알파벳 순서(알렙, 베트, 기멜...)에 따라 각 절이 시작되는 답관체(Acrostic) 시로, 교육적인 목적과 기억의 용이성을 위해 사용된 기법입니다. 시인은 외부의 적인 '원수'와 내부의 적인 '죄'라는 두 가지 문제에 직면해 있습니다. 그는 자신의 젊은 시절의 죄와 허물을 기억하지 말아달라고 간구하며(7절), 자신의 구원이 자신의 의로움이 아닌 오직 하나님의 '선하심과 정직하심', 그리고 '인자와 긍휼'에 근거하고 있음을 고백합니다. 이는 하나님의 언약적 사랑(헤세드)에 대한 깊은 신뢰를 보여줍니다. 하나님은 언약을 맺은 자기 백성을 결코 버리지 않으시고, 그들의 죄를 용서하시며, 올바른 길로 인도하시는 신실하신 분이라는 믿음이 시편 전체를 관통하고 있습니다.</p>
-            <h3>주요 구절 해설 (Key Verse Commentary)</h3>
-            <ul>
-                <li>
-                    <p class="key-verse"><strong>시편 25:4</strong> 여호와여 주의 도를 내게 보이시고 주의 길을 내게 가르치소서</p>
-                    <p class="commentary-text">자신의 판단과 길이 아닌, 하나님의 길과 뜻을 구하는 겸손한 신앙인의 자세를 보여줍니다. 인생의 고난과 혼란 속에서 우리가 구해야 할 가장 중요한 것은 문제 해결 그 자체가 아니라, 그 상황 속에서 하나님의 뜻을 알고 그 길을 따라가는 것임을 가르쳐줍니다.</p>
-                </li>
-                <li>
-                    <p class="key-verse"><strong>시편 25:11</strong> 여호와여 나의 죄악이 크오니 주의 이름을 위하여 사하여 주소서</p>
-                    <p class="commentary-text">용서의 근거를 자신의 회개의 진정성이나 공로가 아닌 '주의 이름', 즉 하나님의 영광과 성품에 둡니다. 나의 죄는 크지만, 그보다 더 크신 하나님의 명예와 신실하심을 위해 용서해달라는 이 기도는, 개혁주의 신학의 핵심인 '오직 하나님의 영광을 위하여(Soli Deo Gloria)' 정신을 잘 보여줍니다.</p>
-                </li>
-            </ul>
-            <h3>성경 본문 (Full Text)</h3>
-            <div class="bible-text">
-                <strong>주의 길을 가르치소서</strong>
-                <div><span class="verse-number">1</span>여호와여 나의 영혼이 주를 우러러보나이다</div>
-                <div><span class="verse-number">2</span>나의 하나님이여 내가 주께 의지하였사오니 나를 부끄럽지 않게 하시고 나의 원수들이 나를 이겨 개가를 부르지 못하게 하소서</div>
-                <div><span class="verse-number">3</span>주를 바라는 자들은 수치를 당하지 아니하려니와 까닭 없이 속이는 자들은 수치를 당하리이다</div>
-                <div><span class="verse-number">4</span>여호와여 주의 도를 내게 보이시고 주의 길을 내게 가르치소서... (이하 25장 전체)</div>
-            </div>
-        </div>
-
-        <div class="chapter-card integration-card">
-            <h2>통합적 이해</h2>
-            <h3>관통하는 주제: 하나님의 절대 주권: 선택, 구원, 그리고 심판</h3>
-            <p>오늘의 본문들은 하나님의 절대적인 주권이 인간사와 구원의 역사 속에서 어떻게 나타나는지를 다각적으로 보여줍니다. 하나님은 자기 백성을 구원할 지도자를 주권적으로 세우시고(사무엘상), 구원받을 백성을 주권적으로 선택하시며(로마서), 교만한 열방을 주권적으로 심판하시고(예레미야), 언약 백성을 주권적으로 인도하십니다(시편). 이 모든 사건의 중심에는 인간의 행위나 자격이 아닌, 하나님의 자유롭고 강력한 의지가 있습니다.</p>
-
-            <h3>구속사의 파노라마 (시각적 연결고리)</h3>
-            <div class="svg-container">
-            <svg width="100%" height="350" viewBox="0 0 800 350">
-                <style>
-                    .center-text-bg{font-size:22px; font-weight:bold; fill:#333; }
-                    .node-title{font-size:16px; font-weight:bold; text-anchor:middle;}
-                    .node-desc{font-size:13px; text-anchor:middle;}
-                    .link-text{font-size:12px; fill:#555;}
-                </style>
-                <defs>
-                    <radialGradient id="glow">
-                        <stop offset="0%" stop-color="#fffde7" stop-opacity="1"/>
-                        <stop offset="100%" stop-color="#fff3e0" stop-opacity="0"/>
-                    </radialGradient>
-                    <marker id="arrow_integ" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#555"/></marker>
-                </defs>
+        <main>
+            <div class="chapter-card card-book1">
+                <h2>사무엘상 11장 분석</h2>
+                <h3>개요 (Overview)</h3>
+                <p>사무엘상 11장은 사울이 이스라엘의 왕으로서 자신의 역할을 감당하는 첫 번째 결정적인 사건을 다룹니다. 암몬 사람 나하스가 길르앗 야베스를 위협하자, 사울에게 하나님의 영이 강하게 임하여 이스라엘 군대를 소집하고 큰 승리를 거둡니다. 이 사건을 통해 사울의 왕권은 백성 앞에서 공고해지며, 길갈에서 왕국이 새롭게 갱신됩니다.</p>
                 
-                <circle cx="400" cy="175" r="150" fill="url(#glow)"/>
-                <circle cx="400" cy="175" r="120" fill="#fff3e0" stroke="#8d6e63" stroke-width="2"/>
-                <text x="400" y="180" class="center-text-bg" text-anchor="middle">하나님의 절대 주권</text>
+                <h3>시각적 분석 (Visual Analysis)</h3>
+                <svg class="analysis-svg" viewBox="0 0 400 250">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#ffcccc;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#4285F4;stop-opacity:1" />
+                        </linearGradient>
+                        <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#333" />
+                        </marker>
+                    </defs>
+                    
+                    <rect x="10" y="20" width="100" height="50" rx="5" fill="#fde2e2" stroke="#DB4437" stroke-width="2"/>
+                    <text x="60" y="48" font-size="10" text-anchor="middle">암몬의 위협</text>
+                    <text x="60" y="62" font-size="9" text-anchor="middle">(나하스의 모욕)</text>
 
-                <g>
-                    <circle cx="150" cy="80" r="40" fill="#e3f2fd" stroke="#4285F4" stroke-width="2"/>
-                    <text x="150" y="75" class="node-title">[삼상 11]</text>
-                    <text x="150" y="95" class="node-desc">구원자 선택</text>
-                    <path d="M 285 160 L 185 95" stroke="#78909c" stroke-width="1.5" marker-end="url(#arrow_integ)"/>
-                    <text x="250" y="120" class="link-text">역사 속 구원</text>
-                </g>
+                    <path d="M 115 45 L 155 45" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
 
-                <g>
-                    <circle cx="650" cy="80" r="40" fill="#fbe9e7" stroke="#DB4437" stroke-width="2"/>
-                    <text x="650" y="75" class="node-title">[롬 9]</text>
-                    <text x="650" y="95" class="node-desc">백성 선택</text>
-                    <path d="M 515 160 L 615 95" stroke="#78909c" stroke-width="1.5" marker-end="url(#arrow_integ)"/>
-                    <text x="550" y="120" class="link-text">은혜의 선택</text>
-                </g>
+                    <g transform="translate(160, 20)">
+                        <rect width="80" height="90" rx="5" fill="#e3f2fd" stroke="#4285F4" stroke-width="2"/>
+                        <text x="40" y="20" font-size="10" text-anchor="middle">사울의 분노</text>
+                        <text x="40" y="40" font-size="12" fill="#4285F4" font-weight="bold" text-anchor="middle">하나님의 영</text>
+                        <text x="40" y="55" font-size="10" text-anchor="middle">임재</text>
+                        <path d="M 10 65 L 70 65" stroke="#4285F4" stroke-dasharray="2 2"/>
+                        <text x="40" y="80" font-size="10" text-anchor="middle">백성 소집</text>
+                    </g>
 
-                <g>
-                    <circle cx="150" cy="270" r="40" fill="#fff8e1" stroke="#F4B400" stroke-width="2"/>
-                    <text x="150" y="265" class="node-title">[렘 48]</text>
-                    <text x="150" y="285" class="node-desc">열방 심판</text>
-                    <path d="M 285 190 L 185 255" stroke="#78909c" stroke-width="1.5" marker-end="url(#arrow_integ)"/>
-                    <text x="250" y="230" class="link-text">공의의 통치</text>
-                </g>
+                    <path d="M 245 65 L 285 65" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
 
-                <g>
-                    <circle cx="650" cy="270" r="40" fill="#e8f5e9" stroke="#0F9D58" stroke-width="2"/>
-                    <text x="650" y="265" class="node-title">[시 25]</text>
-                    <text x="650" y="285" class="node-desc">언약 백성 인도</text>
-                    <path d="M 515 190 L 615 255" stroke="#78909c" stroke-width="1.5" marker-end="url(#arrow_integ)"/>
-                    <text x="540" y="230" class="link-text">긍휼의 통치</text>
-                </g>
-            </svg>
+                    <rect x="290" y="40" width="100" height="50" rx="5" fill="#d5f5e3" stroke="#0F9D58" stroke-width="2"/>
+                    <text x="340" y="68" font-size="10" text-anchor="middle">결정적 승리</text>
+                    <text x="340" y="82" font-size="9" text-anchor="middle">(야베스 구원)</text>
+                    
+                    <path d="M 210 115 L 210 155" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+
+                    <rect x="160" y="160" width="100" height="60" rx="5" fill="#f0e6ff" stroke="#8e44ad" stroke-width="2"/>
+                    <text x="210" y="185" font-size="10" text-anchor="middle">왕권 확립</text>
+                    <text x="210" y="205" font-size="9" text-anchor="middle">(길갈 언약 갱신)</text>
+                    
+                    <text x="200" y="240" font-size="9" text-anchor="middle" fill="#555">위기 → 성령의 개입 → 구원 → 왕권의 확립</text>
+                </svg>
+
+                <h3>배경지식 및 신학적 통찰 (Context & Theology)</h3>
+                <p>사울은 이미 사무엘에게 기름 부음을 받았고(10:1), 미스바에서 제비뽑기로 왕으로 세워졌지만(10:24), 일부 백성들은 그를 인정하지 않았습니다(10:27). 길르앗 야베스 사건은 사울의 왕권을 공식적으로, 그리고 실질적으로 확립하는 계기가 됩니다. 여기서 중요한 것은 사울 개인의 능력이 아니라 '하나님의 영이 그에게 크게 임하셨다'는 점입니다. 이는 이스라엘의 왕은 인간적인 힘이 아닌, 하나님의 신정통치를 대리하는 존재임을 명확히 보여줍니다. 그의 분노는 개인적인 감정이 아니라, 하나님의 백성이 모욕당하는 것에 대한 '거룩한 분노'였습니다. 이 승리는 하나님께서 사울을 통해 일하심을 증명하며, 흩어졌던 이스라엘을 하나로 묶는 계기가 됩니다.</p>
+
+                <h3>주요 구절 해설 (Key Verse Commentary)</h3>
+                <ul>
+                    <li>
+                        <p class="key-verse"><strong>사무엘상 11:6</strong> 사울이 이 말을 들을 때에 하나님의 영에게 크게 감동되매 그의 노가 크게 일어나</p>
+                        <p class="commentary-text">사울의 행동은 인간적 충동이 아닌 신적 개입의 결과였습니다. '하나님의 영에게 크게 감동되매'는 그의 리더십의 원천이 어디에 있는지를 보여줍니다. 구약에서 하나님의 영은 특별한 과업을 수행할 인물에게 능력과 지혜를 부여하기 위해 임하셨습니다. 이 거룩한 분노는 이스라엘을 구원하려는 하나님의 열심의 표현이었습니다.</p>
+                    </li>
+                    <li>
+                        <p class="key-verse"><strong>사무엘상 11:13</strong> 사울이 이르되 이 날에는 사람을 죽이지 못하리니 오늘 여호와께서 이스라엘 중에 구원을 베푸셨음이니라</p>
+                        <p class="commentary-text">승리 후, 백성들이 사울을 반대했던 자들을 처벌하려 할 때 사울은 관용을 베풉니다. 그는 이 승리가 자신의 공로가 아니라 '여호와께서 베푸신 구원'임을 분명히 인지하고 있었습니다. 이는 초기 사울의 겸손함과 신앙적 면모를 보여주는 중요한 장면입니다. 그는 영광을 자신이 아닌 하나님께 돌리며, 공동체의 화합을 우선시했습니다.</p>
+                    </li>
+                </ul>
+
+                <h3>성경 본문 (Full Text)</h3>
+                <div class="bible-text">
+                    <strong>암몬 사람 나하스의 위협</strong>
+                    <div><span class="verse-number">1</span>암몬 사람 나하스가 올라와서 길르앗 야베스에 맞서 진 치매 야베스 모든 사람이 나하스에게 이르되 우리와 언약하자 그리하면 우리가 너를 섬기리라 하니</div>
+                    <div><span class="verse-number">2</span>암몬 사람 나하스가 그들에게 이르되 내가 너희 오른 눈을 다 빼어야 너희와 언약하리라 내가 온 이스라엘을 이같이 모욕하리라</div>
+                    <div><span class="verse-number">3</span>야베스 장로들이 그에게 이르되 우리에게 이레 동안 말미를 주어 우리가 이스라엘 온 지역에 전령들을 보내게 하라 만일 우리를 구원할 자가 없으면 네게 나아가리라 하니라</div>
+                    <strong>하나님의 영에 감동된 사울</strong>
+                    <div><span class="verse-number">4</span>이에 전령들이 사울이 사는 기브아에 이르러 이 말을 백성에게 전하매 모든 백성이 소리를 높여 울더니</div>
+                    <div><span class="verse-number">5</span>마침 사울이 밭에서 소를 몰고 오다가 이르되 백성이 무슨 일로 우느냐 하니 그들이 야베스 사람의 말을 전하니라</div>
+                    <div><span class="verse-number">6</span>사울이 이 말을 들을 때에 하나님의 영에게 크게 감동되매 그의 노가 크게 일어나</div>
+                    <div><span class="verse-number">7</span>한 겨리의 소를 잡아 각을 뜨고 전령들의 손으로 그것을 이스라엘 모든 지역에 두루 보내어 이르되 누구든지 나와서 사울과 사무엘을 따르지 아니하면 그의 소들도 이와 같이 하리라 하였더니 여호와의 두려움이 백성에게 임하매 그들이 한 사람 같이 나온지라</div>
+                    <div><span class="verse-number">8</span>사울이 베섹에서 그들의 수를 세어 보니 이스라엘 자손이 삼십만 명이요 유다 사람이 삼만 명이더라</div>
+                    <strong>길르앗 야베스를 구원하다</strong>
+                    <div><span class="verse-number">9</span>무리가 와 있는 전령들에게 이르되 너희는 길르앗 야베스 사람에게 이같이 이르기를 내일 해가 더울 때에 너희가 구원을 받으리라 하라 전령들이 돌아가서 야베스 사람들에게 전하매 그들이 기뻐하니라</div>
+                    <div><span class="verse-number">10</span>야베스 사람들이 이에 이르되 우리가 내일 너희에게 나아가리니 너희 생각에 좋을 대로 우리에게 다 행하라 하니라</div>
+                    <div><span class="verse-number">11</span>이튿날 사울이 백성을 삼 대로 나누고 새벽에 적진 한가운데로 들어가서 날이 더울 때까지 암몬 사람들을 치매 남은 자가 다 흩어져서 둘도 함께 한 자가 없었더라</div>
+                    <strong>사울의 왕위가 공고해지다</strong>
+                    <div><span class="verse-number">12</span>백성이 사무엘에게 이르되 사울이 어찌 우리를 다스리겠느냐 한 자가 누구니이까 그들을 끌어내소서 우리가 죽이겠나이다</div>
+                    <div><span class="verse-number">13</span>사울이 이르되 이 날에는 사람을 죽이지 못하리니 오늘 여호와께서 이스라엘 중에 구원을 베푸셨음이니라</div>
+                    <div><span class="verse-number">14</span>사무엘이 백성에게 이르되 오라 우리가 길갈로 가서 나라를 새롭게 하자</div>
+                    <div><span class="verse-number">15</span>모든 백성이 길갈로 가서 거기서 여호와 앞에서 사울을 왕으로 삼고 길갈에서 여호와 앞에 화목제를 드리고 사울과 이스라엘 모든 사람이 거기서 크게 기뻐하니라</div>
+                </div>
             </div>
 
-            <h3>본문별 연결고리 및 구속사적 맥락 (해설)</h3>
-            <p>오늘의 네 본문은 '하나님의 절대 주권'이라는 웅장한 주제 아래 완벽한 조화를 이룹니다. 로마서 9장은 이 주제의 신학적 핵심을 제공합니다. 구원은 인간의 혈통, 노력, 의지에 달린 것이 아니라, 토기장이이신 하나님의 전적인 선택과 긍휼에 달려있습니다. 이 선언은 다른 세 본문을 이해하는 열쇠가 됩니다.</p>
-            <p>사무엘상 11장은 이 주권이 어떻게 역사 속에서 '구원'으로 나타나는지를 보여줍니다. 하나님은 밭을 갈던 평범한 사울에게 성령을 부어, 절망에 빠진 자기 백성을 구원할 지도자로 주권적으로 세우십니다. 예레미야 48장은 주권의 또 다른 측면인 '심판'을 보여줍니다. 강하고 교만했던 모압은 하나님의 주권적인 심판 아래 철저히 무너집니다. 이처럼 하나님의 주권은 구원과 심판, 두 날개로 역사를 이끌어갑니다.</p>
-            <p>이러한 하나님의 절대 주권 앞에서 인간은 어떻게 반응해야 합니까? 시편 25편이 그 답을 제시합니다. 시인은 자신의 죄악이 크고 원수들이 강함을 알기에, 자신의 의가 아닌 하나님의 주권적인 '인자와 긍휼'을 의지합니다. 그는 "주의 도를 내게 보이소서"라고 기도하며, 주권자 하나님의 인도하심을 구합니다. 이것이 바로 로마서 9장의 선택 교리를 이해한 자의 마땅한 반응입니다. 나의 구원이 나의 행위가 아닌 하나님의 주권적 은혜에 있음을 알기에, 우리는 교만할 수 없으며 오직 그분의 긍휼을 의지하며 겸손히 그분의 인도를 구할 뿐입니다. 사울의 구원, 모압의 심판, 그리고 시인의 기도는 모두 하나님의 절대 주권을 다양한 각도에서 비추는 거울과 같습니다.</p>
+            <div class="chapter-card card-book2">
+                <h2>로마서 9장 분석</h2>
+                <h3>개요 (Overview)</h3>
+                <p>로마서 9장은 이스라엘의 구원 문제와 하나님의 주권적 선택에 대한 바울의 깊은 고뇌와 신학적 논증을 담고 있습니다. 바울은 자기 동족 이스라엘의 불신에 대해 큰 슬픔을 표현하며, 하나님의 약속이 폐해진 것이 아니라, 그 약속은 육신의 자녀가 아닌 '약속의 자녀'에게 주어지는 것임을 설명합니다. 야곱과 에서의 예를 통해 하나님의 선택은 인간의 행위나 의지가 아닌, 전적인 하나님의 주권에 달려있음을 역설하며, 토기장이 비유를 통해 하나님의 주권에 순복할 것을 촉구합니다.</p>
 
-            <h3>주제별 심층 분석표</h3>
-            <table class="analysis-table">
-                <thead>
-                    <tr>
-                        <th>주제</th>
-                        <th>사무엘상 11</th>
-                        <th>로마서 9</th>
-                        <th>예레미야 48</th>
-                        <th>시편 25</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>하나님의 주권</strong></td>
-                        <td>구원자를 세우시고 성령을 부으심</td>
-                        <td>긍휼히 여길 자를 선택하심</td>
-                        <td>교만한 나라를 심판하심</td>
-                        <td>언약에 따라 인도하고 용서하심</td>
-                    </tr>
-                    <tr>
-                        <td><strong>인간의 상태</strong></td>
-                        <td>절망, 위협에 처함 / 구원받음</td>
-                        <td>스스로 구원할 수 없음 (행위X)</td>
-                        <td>교만, 안일함 / 심판받음</td>
-                        <td>죄인, 고통 중에 있음 / 간구함</td>
-                    </tr>
-                    <tr>
-                        <td><strong>구원의 방식/근거</strong></td>
-                        <td>하나님의 영의 감동과 능력</td>
-                        <td>오직 하나님의 긍휼과 선택</td>
-                        <td>(심판이 주제)</td>
-                        <td>하나님의 이름과 인자하심</td>
-                    </tr>
-                    <tr>
-                        <td><strong>인간의 반응</strong></td>
-                        <td>울부짖음(야베스) / 순종(사울)</td>
-                        <td>믿음으로 의를 얻음 (vs 행위)</td>
-                        <td>(언급되지 않음)</td>
-                        <td>주를 바라고 의지하며 간구함</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <h3>오늘의 교훈</h3>
-            <p>우리는 종종 우리의 구원이나 삶의 문제들이 우리의 노력이나 선택에 달려있다고 착각합니다. 그러나 오늘 본문은 단호하게 선언합니다. 당신의 구원은 당신의 열심이 아닌 하나님의 주권적인 선택에 근거하며, 당신 삶의 모든 순간은 그분의 섭리 안에 있습니다. 이 진리는 우리를 교만에서 겸손으로, 불안에서 평안으로 인도합니다. 나의 자격 없음을 알기에 우리는 로마서 9장의 토기장이 비유 앞에서 잠잠히 엎드릴 수밖에 없습니다. 또한 나의 모든 것을 아시는 주권자께서 시편 25편의 약속처럼 나를 인도하실 것을 믿기에, 우리는 어떤 고난 속에서도 소망을 가질 수 있습니다. 오늘 하루, 내 삶의 모든 영역에서 하나님의 절대 주권을 인정하고, 그 토기장이의 선하신 손에 나를 온전히 맡겨드리는 믿음의 결단이 있기를 소망합니다.</p>
-        </div>
+                <h3>시각적 분석 (Visual Analysis)</h3>
+                <svg class="analysis-svg" viewBox="0 0 400 300">
+                    <style>.heavy { font-weight: bold; fill: #DB4437; }</style>
+                    <g text-anchor="middle">
+                        <text x="200" y="25" font-size="14" font-weight="bold">하나님의 주권적 선택 (Sovereign Choice)</text>
+                        
+                        <rect x="20" y="50" width="160" height="80" rx="10" fill="#fbe9e7" stroke="#DB4437" />
+                        <text x="100" y="70" font-size="12">육신의 자녀 ≠ 약속의 자녀</text>
+                        <text x="100" y="90" font-size="10">아브라함의 씨라도 다 자녀가 아님</text>
+                        <text x="100" y="110" font-size="10">(이삭 vs 이스마엘)</text>
+
+                        <rect x="220" y="50" width="160" height="80" rx="10" fill="#fbe9e7" stroke="#DB4437" />
+                        <text x="300" y="70" font-size="12">행위 이전의 선택</text>
+                        <text x="300" y="90" font-size="10">태중에서부터 결정됨</text>
+                        <text x="300" y="110" font-size="10">(야곱 vs 에서)</text>
+
+                        <path d="M 200 135 L 200 165" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+
+                        <ellipse cx="200" cy="190" rx="150" ry="40" fill="#fff3e0" stroke="#F4B400" />
+                        <text x="200" y="185" font-size="12" class="heavy">토기장이 비유</text>
+                        <text x="200" y="205" font-size="10">"진노의 그릇" & "긍휼의 그릇"</text>
+                        
+                        <path d="M 100 235 L 150 260" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)" />
+                        <path d="M 300 235 L 250 260" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)" />
+                        
+                        <g transform="translate(50, 265)">
+                            <text font-size="11">이방인: 믿음으로 의를 얻음</text>
+                        </g>
+                        <g transform="translate(250, 265)">
+                            <text font-size="11">이스라엘: 율법으로 의를 구하다 실패</text>
+                        </g>
+                        
+                        <text x="200" y="290" font-size="9" fill="#555">하나님의 주권은 인간의 혈통이나 노력을 넘어서며, 믿음을 통해 나타난다.</text>
+                    </g>
+                </svg>
+
+                <h3>배경지식 및 신학적 통찰 (Context & Theology)</h3>
+                <p>로마서 9-11장은 로마서 전체에서 하나의 독립된 단락으로, 이스라엘의 구원 문제를 집중적으로 다룹니다. 바울은 이스라엘이 메시야를 거부한 현실 앞에서 '그렇다면 하나님의 약속은 실패했는가?'라는 신학적 난제에 직면합니다. 바울의 답변은 '결코 그럴 수 없다'입니다. 그는 하나님의 계획이 실패한 것이 아니라, 우리가 하나님의 계획을 오해했음을 밝힙니다. 하나님의 선택은 혈통(유대인)이나 인간의 노력(율법 준수)에 기반하지 않고, 오직 긍휼을 베푸시고자 하는 하나님의 절대 주권에 달려있습니다. 이것이 '선택 교리'의 핵심입니다. 이는 인간의 교만을 꺾고, 구원의 모든 영광을 하나님께만 돌리게 하는 중요한 신학적 원리입니다.</p>
+
+                <h3>주요 구절 해설 (Key Verse Commentary)</h3>
+                <ul>
+                    <li>
+                        <p class="key-verse"><strong>로마서 9:16</strong> 그런즉 원하는 자로 말미암음도 아니요 달음박질하는 자로 말미암음도 아니요 오직 긍휼히 여기시는 하나님으로 말미암음이니라</p>
+                        <p class="commentary-text">이 구절은 선택 교리의 핵심을 요약합니다. 구원은 인간의 의지적 결단('원하는 자')이나 종교적 노력('달음박질하는 자')의 결과가 아닙니다. 그것은 전적으로 하나님의 주권적인 '긍휼'의 선물입니다. 이는 구원의 주도권이 인간에게 있지 않고 하나님께 있음을 선포하는 강력한 말씀이며, 모든 성도에게 큰 위로와 겸손의 근거가 됩니다.</p>
+                    </li>
+                    <li>
+                        <p class="key-verse"><strong>로마서 9:21</strong> 토기장이가 진흙 한 덩이로 하나는 귀히 쓸 그릇을, 하나는 천히 쓸 그릇을 만들 권한이 없느냐</p>
+                        <p class="commentary-text">이 비유는 하나님의 절대 주권에 대한 인간의 항변을 잠재웁니다. 피조물인 인간이 창조주이신 하나님의 결정에 대해 옳고 그름을 판단할 수 없다는 것입니다. 하나님은 자신의 영광을 드러내기 위해 '진노의 그릇'(심판의 대상)과 '긍휼의 그릇'(구원의 대상)을 만드실 주권적인 권한을 가지십니다. 이는 우리에게 하나님의 지혜와 계획의 깊이를 인정하고 잠잠히 그분의 처분에 순종할 것을 요구합니다.</p>
+                    </li>
+                </ul>
+
+                <h3>성경 본문 (Full Text)</h3>
+                <div class="bible-text">
+                    <strong>이스라엘의 구원에 대한 바울의 고뇌</strong>
+                    <div><span class="verse-number">1</span>내가 그리스도 안에서 참말을 하고 거짓말을 아니하노라 나에게 큰 근심이 있는 것과 마음에 그치지 않는 고통이 있는 것을 내 양심이 성령 안에서 나와 더불어 증언하노니</div>
+                    <div><span class="verse-number">2</span>(1절에 포함됨)</div>
+                    <div><span class="verse-number">3</span>나의 형제 곧 골육의 친척을 위하여 내 자신이 저주를 받아 그리스도에게서 끊어질지라도 원하는 바로라</div>
+                    <div><span class="verse-number">4</span>그들은 이스라엘 사람이라 그들에게는 양자 됨과 영광과 언약들과 율법을 세우신 것과 예배와 약속들이 있고</div>
+                    <div><span class="verse-number">5</span>조상들도 그들의 것이요 육신으로 하면 그리스도가 그들에게서 나셨으니 그는 만물 위에 계셔서 세세에 찬양을 받으실 하나님이시니라 아멘</div>
+                    <strong>하나님의 주권적인 선택</strong>
+                    <div><span class="verse-number">6</span>그러나 하나님의 말씀이 폐하여진 것 같지 않도다 이스라엘에게서 난 그들이 다 이스라엘이 아니요</div>
+                    <div><span class="verse-number">7</span>또한 아브라함의 씨가 다 그의 자녀가 아니라 오직 이삭으로부터 난 자라야 네 씨라 불리리라 하셨으니</div>
+                    <div><span class="verse-number">8</span>곧 육신의 자녀가 하나님의 자녀가 아니요 오직 약속의 자녀가 씨로 여기심을 받느니라</div>
+                    <div><span class="verse-number">9</span>약속의 말씀은 이것이니 명년 이 때에 내가 이르리니 사라에게 아들이 있으리라 하심이라</div>
+                    <div><span class="verse-number">10</span>그뿐 아니라 또한 리브가가 우리 조상 이삭 한 사람으로 말미암아 임신하였는데</div>
+                    <div><span class="verse-number">11</span>그 자식들이 아직 나지도 아니하고 무슨 선이나 악을 행하지 아니한 때에 택하심을 따라 되는 하나님의 뜻이 행위로 말미암지 않고 오직 부르시는 이로 말미암아 서게 하려 하사</div>
+                    <div><span class="verse-number">12</span>리브가에게 이르시되 큰 자가 어린 자를 섬기리라 하셨나니</div>
+                    <div><span class="verse-number">13</span>기록된 바 내가 야곱은 사랑하고 에서는 미워하였다 하심과 같으니라</div>
+                    <strong>하나님의 진노와 긍휼</strong>
+                    <div><span class="verse-number">14</span>그런즉 우리가 무슨 말을 하리요 하나님께 불의가 있느냐 그럴 수 없느니라</div>
+                    <div><span class="verse-number">15</span>모세에게 이르시되 내가 긍휼히 여길 자를 긍휼히 여기고 불쌍히 여길 자를 불쌍히 여기리라 하셨으니</div>
+                    <div><span class="verse-number">16</span>그런즉 원하는 자로 말미암음도 아니요 달음박질하는 자로 말미암음도 아니요 오직 긍휼히 여기시는 하나님으로 말미암음이니라</div>
+                    <div><span class="verse-number">17</span>성경이 바로에게 이르시되 내가 이 일을 위하여 너를 세웠으니 곧 너로 말미암아 내 능력을 보이고 내 이름이 온 땅에 전파되게 하려 함이라 하셨으니</div>
+                    <div><span class="verse-number">18</span>그런즉 하나님께서 하고자 하시는 자를 긍휼히 여기시고 하고자 하시는 자를 완악하게 하시느니라</div>
+                    <div><span class="verse-number">19</span>혹 네가 내게 말하기를 그러면 하나님이 어찌하여 허물하시느냐 누가 그 뜻을 대적하느냐 하리니</div>
+                    <div><span class="verse-number">20</span>이 사람아 네가 누구이기에 감히 하나님께 반문하느냐 지음을 받은 물건이 지은 자에게 어찌 나를 이같이 만들었느냐 말하겠느냐</div>
+                    <div><span class="verse-number">21</span>토기장이가 진흙 한 덩이로 하나는 귀히 쓸 그릇을, 하나는 천히 쓸 그릇을 만들 권한이 없느냐</div>
+                    <div><span class="verse-number">22</span>만일 하나님이 그의 진노를 보이시고 그의 능력을 알게 하고자 하사 멸하기로 준비된 진노의 그릇을 오래 참으심으로 관용하시고</div>
+                    <div><span class="verse-number">23</span>또한 영광 받기로 예비하신 바 긍휼의 그릇에 대하여 그 영광의 풍성함을 알게 하고자 하셨을지라도 무슨 말을 하리요</div>
+                    <div><span class="verse-number">24</span>이 그릇은 우리니 곧 유대인 중에서뿐 아니라 이방인 중에서도 부르신 자니라</div>
+                    <strong>이스라엘의 남은 자</strong>
+                    <div><span class="verse-number">25</span>호세아의 글에도 이르기를 내가 내 백성 아닌 자를 내 백성이라, 사랑하지 아니한 자를 사랑한 자라 부르리라</div>
+                    <div><span class="verse-number">26</span>너희는 내 백성이 아니라 한 그 곳에서 그들이 살아 계신 하나님의 아들이라 일컬음을 받으리라 함과 같으니라</div>
+                    <div><span class="verse-number">27</span>또 이사야가 이스라엘에 관하여 외치되 이스라엘 자손들의 수가 비록 바다의 모래 같을지라도 남은 자만 구원을 받으리니</div>
+                    <div><span class="verse-number">28</span>주께서 땅 위에서 그 말씀을 이루고 속히 시행하시리라 하셨느니라</div>
+                    <div><span class="verse-number">29</span>또한 이사야가 미리 말한 바 만일 만군의 주께서 우리에게 씨를 남겨 두지 아니하셨더라면 우리가 소돔과 같이 되고 고모라와 같았으리로다 함과 같으니라</div>
+                    <strong>이스라엘의 실패 원인</strong>
+                    <div><span class="verse-number">30</span>그런즉 우리가 무슨 말을 하리요 의를 따르지 아니한 이방인들이 의를 얻었으니 곧 믿음에서 난 의요</div>
+                    <div><span class="verse-number">31</span>의의 법을 따라간 이스라엘은 율법에 이르지 못하였으니</div>
+                    <div><span class="verse-number">32</span>어찌 그러하냐 이는 그들이 믿음을 의지하지 않고 행위를 의지함이라 부딪칠 돌에 부딪쳤느니라</div>
+                    <div><span class="verse-number">33</span>기록된 바 보라 내가 걸림돌과 거치는 바위를 시온에 두노니 그를 믿는 자는 부끄러움을 당하지 아니하리라 함과 같으니라</div>
+                </div>
+            </div>
+
+            <div class="chapter-card card-book3">
+                <h2>예레미야 48장 분석</h2>
+                <h3>개요 (Overview)</h3>
+                <p>예레미야 48장은 모압에 대한 하나님의 심판 예언입니다. 모압은 교만과 우상 숭배, 그리고 하나님의 백성인 이스라엘을 조롱한 죄로 인해 철저한 멸망을 당할 것이 선포됩니다. 예레미야는 모압의 주요 도시들이 파괴되고 백성들이 포로로 잡혀갈 것을 구체적으로 묘사하면서도, 그들의 고통에 대해 슬퍼하는 모습을 보입니다. 마지막에는 그러나 회복에 대한 작은 소망도 언급됩니다.</p>
+
+                <h3>시각적 분석 (Visual Analysis)</h3>
+                <svg class="analysis-svg" viewBox="0 0 400 250">
+                    <style>.label{font-size:10px; fill:#333;} .title{font-size:12px; font-weight:bold; fill:#c68f00;}</style>
+                    <g text-anchor="middle">
+                        <text x="200" y="20" font-size="14" font-weight="bold">모압을 향한 심판 (Judgment on Moab)</text>
+                        
+                        <ellipse cx="90" cy="80" rx="60" ry="30" fill="#fff9c4" stroke="#F4B400"/>
+                        <text x="90" y="75" class="title">죄악의 원인</text>
+                        <text x="90" y="90" class="label">교만, 자만, 우상숭배</text>
+                        <text x="90" y="102" class="label">(그모스 숭배)</text>
+
+                        <ellipse cx="310" cy="80" rx="60" ry="30" fill="#fff9c4" stroke="#F4B400"/>
+                        <text x="310" y="75" class="title">심판의 결과</text>
+                        <text x="310" y="90" class="label">멸망, 포로, 수치</text>
+                        <text x="310" y="102" class="label">(깨진 그릇 비유)</text>
+
+                        <path d="M 155 80 L 245 80" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+                        <text x="200" y="75" font-size="10">원인과 결과</text>
+                        
+                        <rect x="20" y="140" width="360" height="60" rx="5" fill="#fafafa" stroke="#ccc"/>
+                        <text x="200" y="160" font-size="11">"안일하여 술 찌끼가 가라앉은 포도주 같았던" 모압</text>
+                        <text x="200" y="180" font-size="11">이제 그 그릇은 기울여지고 깨어질 것이다.</text>
+                        
+                        <path d="M 200 205 L 200 225" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)" />
+
+                        <g>
+                            <path d="M 150 230 L 250 230 L 250 245 L 150 245 Z" fill="#e8f5e9" stroke="#0F9D58" />
+                            <text x="200" y="242" font-size="10">그러나, 마지막 날의 회복 약속 (47절)</text>
+                        </g>
+                    </g>
+                </svg>
+
+                <h3>배경지식 및 신학적 통찰 (Context & Theology)</h3>
+                <p>모압은 롯과 그의 큰 딸 사이에서 태어난 후손으로, 이스라엘과는 친족 관계에 있었습니다. 그러나 역사적으로 그들은 계속해서 이스라엘을 대적하고 교만하게 행했습니다. 특히 그들의 주신인 '그모스'를 의지하며 스스로의 힘과 재물을 자랑했습니다. 예레미야는 이러한 모압의 교만이 하나님의 심판을 불러오는 핵심 원인임을 지적합니다. '안일하여 술 찌끼가 가라앉은 포도주' 같다는 비유는, 오랜 평화 속에서 영적으로 나태해지고 부패한 모압의 상태를 정확히 묘사합니다. 하나님은 이방 민족의 죄악에 대해서도 공의롭게 심판하시는 만국의 주권자이심이 드러납니다. 동시에 선지자가 그들의 멸망을 슬퍼하는 모습은, 심판 속에서도 긍휼을 잃지 않으시는 하나님의 마음을 엿보게 합니다.</p>
+
+                <h3>주요 구절 해설 (Key Verse Commentary)</h3>
+                <ul>
+                    <li>
+                        <p class="key-verse"><strong>예레미야 48:29</strong> 우리가 모압의 교만을 들었나니 심한 교만 곧 그의 자고와 오만과 자랑과 그 마음의 거만이로다</p>
+                        <p class="commentary-text">모압 심판의 핵심 원인이 '교만'임을 반복적으로 강조합니다. 자고, 오만, 자랑, 거만 등 다양한 단어를 사용하여 그들의 교만이 얼마나 뿌리 깊고 다각적이었는지를 보여줍니다. 성경 전체에서 교만은 하나님을 대적하는 가장 근본적인 죄로 여겨집니다. 스스로를 높이고 하나님의 자리에 앉으려는 시도이기 때문입니다. 모압의 멸망은 교만한 자를 낮추시는 하나님의 공의를 보여주는 사례입니다.</p>
+                    </li>
+                    <li>
+                        <p class="key-verse"><strong>예레미야 48:42</strong> 모압이 여호와를 거슬러 자만하였으므로 멸망하고 다시 나라를 이루지 못하리로다</p>
+                        <p class="commentary-text">모압의 교만은 단순히 자신을 높이는 것을 넘어 '여호와를 거슬러 자만'하는 것이었습니다. 이는 하나님의 주권에 대한 정면 도전입니다. 그들은 이스라엘의 하나님을 멸시하고 자신들의 우상과 힘을 더 의지했습니다. 따라서 그들에 대한 심판은 단순히 영토를 잃는 것이 아니라, '다시 나라를 이루지 못하는' 철저한 멸망이 될 것이라고 선포됩니다. 이는 하나님의 영광을 대적하는 세력의 최종적인 운명을 보여줍니다.</p>
+                    </li>
+                </ul>
+
+                <h3>성경 본문 (Full Text)</h3>
+                <div class="bible-text">
+                    <strong>모압에 대한 심판 선언</strong>
+                    <div><span class="verse-number">1</span>모압에 관한 말씀이라 만군의 여호와 이스라엘의 하나님께서 이와 같이 말씀하시되 슬프다 느보여 그것이 황폐되었도다 기랴다임이 함락되어 수치를 당하였고 미스갑이 수치를 당하여 파괴되었으니</div>
+                    <div><span class="verse-number">2</span>모압의 칭송이 없어졌도다 헤스본에서 무리가 그를 해하려고 악을 도모하고 이르기를 와서 그를 끊어서 나라가 되지 못하게 하자 하는도다 맛멘이여 너도 잠잠하게 되리니 칼이 너를 뒤따라 가리로다</div>
+                    <div><span class="verse-number">3</span>호로나임에서 부르짖는 소리여 황폐와 큰 파멸이로다</div>
+                    <div><span class="verse-number">4</span>모압이 멸망을 당하여 그 어린이들의 부르짖음이 들리는도다</div>
+                    <div><span class="verse-number">5</span>그들이 루힛 언덕으로 올라가면서 울고 호로나임 내리막길에서 파멸의 고통스러운 부르짖음을 하는도다</div>
+                    <div><span class="verse-number">6</span>도망하여 네 생명을 구원하여 광야의 노간주나무 같이 될지어다</div>
+                    <div><span class="verse-number">7</span>네가 네 업적과 보물을 의뢰하므로 너도 정복을 당할 것이요 그모스는 그 제사장들과 고관들과 함께 포로 되어 갈 것이라</div>
+                    <div><span class="verse-number">8</span>파멸하는 자가 각 성읍에 이를 것인즉 한 성읍도 면하지 못할 것이며 골짜기는 함몰되고 평원은 파괴되리니 여호와의 말씀과 같으니라</div>
+                    <div><span class="verse-number">9</span>모압에 날개를 주어 나라 올라 피하게 하라 그 성읍들이 황폐하여 거기에 사는 자가 없으리라</div>
+                    <div><span class="verse-number">10</span>여호와의 일을 게을리 하는 자는 저주를 받을 것이요 자기 칼을 막아 피를 흘리지 아니하는 자도 저주를 받을 것이로다</div>
+                    <strong>안일과 교만에 빠진 모압</strong>
+                    <div><span class="verse-number">11</span>모압은 젊은 시절부터 평안하고 포로도 되지 아니하였으므로 마치 술의 찌꺼기가 가라앉고 이 그릇에서 저 그릇으로 옮기지 않음 같아서 그 맛이 남아 있고 냄새가 변하지 아니하였도다</div>
+                    <div><span class="verse-number">12</span>그러므로 여호와께서 말씀하시니라 날이 이르리니 내가 술을 옮겨 담는 사람을 그에게 보내리니 그가 기울여 담고 그 그릇을 비게 하고 그 병들을 부수리라</div>
+                    <div><span class="verse-number">13</span>이스라엘 집이 벧엘을 의뢰하므로 수치를 당한 것 같이 모압이 그모스로 말미암아 수치를 당하리로다</div>
+                    ... (이하 47절까지 생략) ...
+                    <strong>모압의 회복에 대한 약속</strong>
+                    <div><span class="verse-number">47</span>그러나 내가 마지막 날에 모압의 포로를 돌려보내리라 여호와의 말씀이니라 모압의 심판은 여기까지니라</div>
+                </div>
+            </div>
+
+            <div class="chapter-card card-book4">
+                <h2>시편 25편 분석</h2>
+                <h3>개요 (Overview)</h3>
+                <p>시편 25편은 다윗의 답관체 시(acrostic poem)로, 각 절이 히브리 알파벳 순서로 시작됩니다. 이 시는 하나님을 향한 간절한 기도와 신뢰의 고백입니다. 다윗은 죄의 용서를 구하고, 원수들의 위협으로부터의 구원을 간청하며, 하나님의 길로 인도해 주시기를 기도합니다. 시편 전체에 걸쳐 하나님의 인자하심과 진실하심, 그리고 언약에 대한 신실하심에 대한 깊은 믿음이 깔려 있습니다.</p>
+
+                <h3>시각적 분석 (Visual Analysis)</h3>
+                <svg class="analysis-svg" viewBox="0 0 400 250">
+                    <style>.txt{font-size:11px;} .title{font-size:12px; font-weight:bold; fill:#0b8043;}</style>
+                    <path d="M 50 220 C 100 10, 300 10, 350 220" fill="none" stroke="#e6f4ea" stroke-width="30"/>
+                    <path d="M 50 220 C 100 10, 300 10, 350 220" fill="none" stroke="#0F9D58" stroke-width="2" stroke-dasharray="5 3"/>
+                    
+                    <g text-anchor="middle">
+                        <text x="200" y="40" class="title">하나님을 향한 영혼의 여정</text>
+                        
+                        <circle cx="80" cy="100" r="25" fill="#fff" stroke="#0F9D58"/>
+                        <text x="80" y="105" class="txt">간구 (Petition)</text>
+                        <text x="80" y="120" font-size="9">인도, 용서, 구원</text>
+
+                        <circle cx="200" cy="80" r="25" fill="#fff" stroke="#0F9D58"/>
+                        <text x="200" y="85" class="txt">신뢰 (Trust)</text>
+                        <text x="200" y="100" font-size="9">주를 우러러보나이다</text>
+
+                        <circle cx="320" cy="100" r="25" fill="#fff" stroke="#0F9D58"/>
+                        <text x="320" y="105" class="txt">고백 (Confession)</text>
+                        <text x="320" y="120" font-size="9">죄와 허물 고백</text>
+
+                        <rect x="120" y="160" width="160" height="40" rx="5" fill="#e6f4ea"/>
+                        <text x="200" y="180" class="txt">하나님의 성품에 대한 찬양</text>
+                        <text x="200" y="195" font-size="9">선하시고 정직하시며 인자와 진리</text>
+
+                        <text x="200" y="235" font-size="10" fill="#555">기도와 신뢰가 하나님의 성품 안에서 어우러짐</text>
+                    </g>
+                </svg>
+
+                <h3>배경지식 및 신학적 통찰 (Context & Theology)</h3>
+                <p>답관체 시는 시편에서 종종 발견되는 형식으로, 교육적 목적과 기억을 돕기 위해 사용되었습니다. 시편 25편은 개인적인 탄식시이면서 동시에 지혜 문학의 성격도 가집니다. 다윗은 현재의 고통(원수들의 위협)과 과거의 죄(젊은 시절의 죄와 허물)라는 두 가지 문제에 직면해 있습니다. 그는 이 문제들을 가지고 하나님께 나아가며, 해결의 근거를 자신의 의로움이 아닌 하나님의 '인자하심'과 '진실하심'에서 찾습니다. 특히 '주의 언약'을 지키는 자에게 베푸시는 하나님의 신실함에 호소합니다. 이는 구원이 인간의 자격이 아닌, 하나님의 언약적 사랑에 기반한다는 개혁주의 신학의 핵심과 일치합니다.</p>
+
+                <h3>주요 구절 해설 (Key Verse Commentary)</h3>
+                <ul>
+                    <li>
+                        <p class="key-verse"><strong>시편 25:4</strong> 여호와여 주의 도를 내게 보이시고 주의 길을 내게 가르치소서</p>
+                        <p class="commentary-text">다윗은 단순히 문제 해결만을 구하지 않고, 하나님의 뜻과 길을 알기 원했습니다. '도(道)'와 '길'은 하나님의 뜻대로 살아가는 삶의 방식과 원리를 의미합니다. 이는 위기 속에서 자신의 생각과 방법이 아닌, 하나님의 인도를 구하는 겸손한 신앙의 자세를 보여줍니다. 진정한 구원은 문제 해결을 넘어 하나님과의 올바른 관계 속으로 들어가는 것임을 암시합니다.</p>
+                    </li>
+                    <li>
+                        <p class="key-verse"><strong>시편 25:11</strong> 여호와여 나의 죄악이 크오니 주의 이름으로 말미암아 사하소서</p>
+                        <p class="commentary-text">다윗은 자신의 죄가 매우 크다는 것을 정직하게 인정합니다. 그리고 용서의 근거를 자신의 회개의 깊이나 선행에서 찾지 않고, '주의 이름으로 말미암아' 구합니다. '주의 이름'은 하나님의 성품과 명예, 영광을 의미합니다. 즉, 죄인을 용서하시는 것을 통해 하나님의 긍휼과 사랑의 성품이 드러나고 그분의 이름이 영광 받으시기를 간구하는 것입니다. 이는 오직 하나님의 은혜에만 의존하는 신앙의 정수를 보여줍니다.</p>
+                    </li>
+                </ul>
+
+                <h3>성경 본문 (Full Text)</h3>
+                <div class="bible-text">
+                    <strong>주의 길을 보여주소서</strong>
+                    <div><span class="verse-number">1</span>[다윗의 시] 여호와여 나의 영혼이 주를 우러러보나이다</div>
+                    <div><span class="verse-number">2</span>나의 하나님이여 내가 주께 의지하였사오니 나를 부끄럽지 않게 하시고 나의 원수들이 나를 이겨 개가를 부르지 못하게 하소서</div>
+                    <div><span class="verse-number">3</span>주를 바라는 자들은 수치를 당하지 아니하려니와 까닭 없이 속이는 자들은 수치를 당하리이다</div>
+                    <div><span class="verse-number">4</span>여호와여 주의 도를 내게 보이시고 주의 길을 내게 가르치소서</div>
+                    <div><span class="verse-number">5</span>주의 진리로 나를 지도하시고 교훈하소서 주는 내 구원의 하나님이시니 내가 종일 주를 기다리나이다</div>
+                    <strong>죄를 용서하소서</strong>
+                    <div><span class="verse-number">6</span>여호와여 주의 긍휼하심과 인자하심이 영원부터 있었사오니 주여 이것들을 기억하옵소서</div>
+                    <div><span class="verse-number">7</span>여호와여 내 젊은 시절의 죄와 허물을 기억하지 마시고 주의 인자하심을 따라 주께서 나를 기억하시되 주의 선하심으로 하옵소서</div>
+                    <div><span class="verse-number">8</span>여호와는 선하시고 정직하시니 그러므로 그의 도로 죄인들을 교훈하시리로다</div>
+                    <div><span class="verse-number">9</span>온유한 자를 정의로 지도하심이여 온유한 자에게 그의 도를 가르치시리로다</div>
+                    <div><span class="verse-number">10</span>여호와의 모든 길은 그의 언약과 증거를 지키는 자에게 인자와 진리로다</div>
+                    <div><span class="verse-number">11</span>여호와여 나의 죄악이 크오니 주의 이름으로 말미암아 사하소서</div>
+                    <strong>하나님을 경외하는 자의 복</strong>
+                    <div><span class="verse-number">12</span>여호와를 경외하는 자 누구냐 그가 택할 길을 그에게 가르치시리로다</div>
+                    <div><span class="verse-number">13</span>그의 영혼은 평안히 살고 그의 자손은 땅을 상속하리로다</div>
+                    <div><span class="verse-number">14</span>여호와의 친밀하심이 그를 경외하는 자들에게 있음이여 그의 언약을 그들에게 보이시리로다</div>
+                    <div><span class="verse-number">15</span>내 눈이 항상 여호와를 바라봄은 내 발을 그물에서 벗어나게 하실 것임이로다</div>
+                    <strong>고통에서 구원하소서</strong>
+                    <div><span class="verse-number">16</span>주여 나는 외롭고 괴로우니 내게 돌이키사 나에게 은혜를 베푸소서</div>
+                    <div><span class="verse-number">17</span>내 마음의 근심이 많사오니 나를 고난에서 끌어내소서</div>
+                    <div><span class="verse-number">18</span>나의 곤고와 환난을 보시고 내 모든 죄를 사하소서</div>
+                    <div><span class="verse-number">19</span>내 원수를 보소서 그들의 수가 많고 나를 심히 미워하나이다</div>
+                    <div><span class="verse-number">20</span>내 영혼을 지켜 나를 구원하소서 내가 주께 피하오니 수치를 당하지 않게 하소서</div>
+                    <div><span class="verse-number">21</span>내가 주를 바라오니 성실과 정직으로 나를 보호하소서</div>
+                    <div><span class="verse-number">22</span>하나님이여 이스라엘을 그 모든 환난에서 속량하소서</div>
+                </div>
+            </div>
+
+            <div class="chapter-card integration-card">
+                <h2>통합적 이해</h2>
+                <h3>관통하는 주제</h3>
+                <p>하나님의 주권적 선택과 구원: 언약 백성을 향한 신실한 구원과 교만한 자를 향한 공의로운 심판</p>
+
+                <h3>구속사의 파노라마 (시각적 연결고리)</h3>
+                <svg class="analysis-svg" viewBox="0 0 500 300">
+                    <style>
+                        .central-theme { font-size: 14px; font-weight: bold; text-anchor: middle; fill: #333; }
+                        .book-title { font-size: 12px; font-weight: bold; text-anchor: middle; }
+                        .keyword { font-size: 10px; text-anchor: middle; fill: #555; }
+                        .line { stroke: #888; stroke-width: 1.5; marker-end: url(#arrow); }
+                    </style>
+                    <defs>
+                        <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#888" />
+                        </marker>
+                    </defs>
+
+                    <rect x="150" y="125" width="200" height="50" rx="10" fill="#e9ecef" stroke="#adb5bd"/>
+                    <text x="250" y="148" class="central-theme">하나님의 주권적 선택과 구원</text>
+                    <text x="250" y="165" class="keyword">(구원과 심판의 주권자)</text>
+
+                    <!-- 사무엘상 -->
+                    <line x1="150" y1="150" x2="80" y2="60" class="line" />
+                    <circle cx="60" cy="40" r="20" fill="#e3f2fd" stroke="#4285F4"/>
+                    <text x="60" y="80" class="book-title" fill="#4285F4">사무엘상 11</text>
+                    <text x="60" y="95" class="keyword">선택된 왕을 통한</text>
+                    <text x="60" y="108" class="keyword">가시적 구원</text>
+                    
+                    <!-- 로마서 -->
+                    <line x1="350" y1="150" x2="420" y2="60" class="line" />
+                    <circle cx="440" cy="40" r="20" fill="#fbe9e7" stroke="#DB4437"/>
+                    <text x="440" y="80" class="book-title" fill="#DB4437">로마서 9</text>
+                    <text x="440" y="95" class="keyword">주권적 선택의</text>
+                    <text x="440" y="108" class="keyword">신학적 원리</text>
+
+                    <!-- 예레미야 -->
+                    <line x1="150" y1="150" x2="80" y2="240" class="line" />
+                    <circle cx="60" cy="260" r="20" fill="#fff9c4" stroke="#F4B400"/>
+                    <text x="60" y="210" class="book-title" fill="#F4B400">예레미야 48</text>
+                    <text x="60" y="225" class="keyword">교만한 자를 향한</text>
+                    <text x="60" y="238" class="keyword">주권적 심판</text>
+
+                    <!-- 시편 -->
+                    <line x1="350" y1="150" x2="420" y2="240" class="line" />
+                    <circle cx="440" cy="260" r="20" fill="#e6f4ea" stroke="#0F9D58"/>
+                    <text x="440" y="210" class="book-title" fill="#0F9D58">시편 25</text>
+                    <text x="440" y="225" class="keyword">주권자께 의뢰하는</text>
+                    <text x="440" y="238" class="keyword">개인의 기도</text>
+                </svg>
+
+                <h3>본문별 연결고리 및 구속사적 맥락</h3>
+                <p>오늘의 네 본문은 서로 다른 시대와 장르에도 불구하고 '하나님의 주권'이라는 거대한 주제 아래 유기적으로 연결됩니다. <b>로마서 9장</b>은 이 주제의 신학적 대헌장을 제시합니다. 구원은 인간의 혈통이나 노력이 아닌, 오직 하나님의 주권적 선택과 긍휼에 달려있음을 선포합니다.</p>
+                <p>이러한 주권은 구체적인 역사 속에서 두 가지 방식으로 나타납니다. 첫째, <b>사무엘상 11장</b>은 '구원'의 방식으로 나타난 하나님의 주권을 보여줍니다. 하나님은 자신의 뜻대로 사울을 선택하시고, 그에게 성령을 부어 위기에 처한 자기 백성(길르앗 야베스)을 구원하십니다. 이는 장차 진정한 왕이신 예수 그리스도를 통해 성취될 궁극적인 구원의 예표입니다. 둘째, <b>예레미야 48장</b>은 '심판'의 방식으로 나타난 하나님의 주권을 보여줍니다. 하나님은 교만한 모압을 그의 주권 아래 공의롭게 심판하십니다. 이는 하나님의 통치가 이스라엘에게만 국한되지 않는, 온 열방을 향한 것임을 보여줍니다.</p>
+                <p><b>시편 25편</b>은 이러한 주권자 하나님 앞에 선 한 개인의 응답입니다. 다윗은 자신의 구원과 죄 사함의 근거를 자신의 자격이 아닌, 언약에 신실하신 하나님의 주권적 인자와 긍휼에 둡니다. 그는 하나님의 주권적 선택(롬 9)을 믿기에, 그분이 택한 자를 구원하시고(삼상 11), 죄를 심판하시되(렘 48) 회개하는 자를 용서하실 것을 신뢰하며 기도하는 것입니다. 이처럼 오늘의 본문들은 하나님의 절대 주권이 구속사 속에서 어떻게 구원과 심판으로 나타나며, 성도는 그 주권 아래 어떻게 믿음으로 반응해야 하는지를 입체적으로 보여줍니다.</p>
+
+                <h3>주제별 심층 분석표</h3>
+                <table class="analysis-table">
+                    <thead>
+                        <tr>
+                            <th>주제</th>
+                            <th>사무엘상 11</th>
+                            <th>로마서 9</th>
+                            <th>예레미야 48</th>
+                            <th>시편 25</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>하나님의 주권</b></td>
+                            <td>왕을 세우시고 구원을 베푸시는 주권</td>
+                            <td>선택과 긍휼에 대한 절대 주권 (신학적 원리)</td>
+                            <td>이방 나라를 심판하시는 만국의 주권</td>
+                            <td>개인의 삶을 인도하고 용서하시는 주권</td>
+                        </tr>
+                        <tr>
+                            <td><b>인간의 상태</b></td>
+                            <td>위협 앞에 무력함, 하나님의 구원 필요</td>
+                            <td>선이나 악을 행하기 전부터 선택의 대상이 됨</td>
+                            <td>교만과 안일함, 우상숭배에 빠짐</td>
+                            <td>죄인이며, 원수들로 인해 고통받음</td>
+                        </tr>
+                        <tr>
+                            <td><b>구원/심판</b></td>
+                            <td>군사적 승리를 통한 구원</td>
+                            <td>'긍휼의 그릇'은 구원, '진노의 그릇'은 심판</td>
+                            <td>교만에 대한 철저한 멸망(심판)과 회복의 약속</td>
+                            <td>죄 용서와 환난에서의 구원을 간구</td>
+                        </tr>
+                        <tr>
+                            <td><b>성도의 반응</b></td>
+                            <td>하나님의 구원을 보고 왕을 인정하며 기뻐함</td>
+                            <td>하나님의 주권에 반문하지 않고 순복함</td>
+                            <td>(선지자의 탄식) 하나님의 공의를 인정함</td>
+                            <td>하나님의 도를 구하고, 그 이름을 의지하며 신뢰함</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>오늘의 교훈</h3>
+                <p>나의 구원이 나의 어떠함에 달려있지 않고, 전적인 하나님의 주권적 은혜와 선택에 달려있다는 사실은 우리에게 가장 큰 위로와 겸손의 이유를 제공합니다. 우리는 사울처럼 하나님의 영이 임할 때 비로소 거룩한 사명을 감당할 수 있으며, 모압처럼 교만해질 때 하나님의 심판을 피할 수 없습니다. 그러므로 오늘 하루, 다윗처럼 나의 모든 상황 속에서 하나님의 주권을 인정하며 "주의 도를 내게 보이시고 주의 길을 내게 가르치소서"라고 기도해야 합니다. 나의 구원과 삶의 모든 과정이 그분의 선하신 손에 달려있음을 신뢰할 때, 우리는 세상의 위협과 내면의 죄악 속에서도 참된 평안을 누릴 수 있습니다.</p>
+            </div>
+        </main>
 
         <footer>
-            2025 KBD 맥체인 성경읽기 프로젝트
+            <p>2025 KBD 맥체인 성경읽기 프로젝트</p>
         </footer>
     </div>
 
     <script>
+        // 1. YouTube IFrame Player API 비동기 로드
         var tag = document.createElement('script');
         tag.src = "https://www.youtube.com/iframe_api";
         var firstScriptTag = document.getElementsByTagName('script')[0];
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
+        // 2. API 로드 후 플레이어 생성
         var player;
-        const videoId = '7t0hWwSP8F8'; // 8월 19일 영상 ID
-        const audioControlButton = document.getElementById('audio-control');
-        let isPlaying = false;
-
         function onYouTubeIframeAPIReady() {
-            player = new YT.Player('player', {
+            player = new YT.Player('player-container', {
                 height: '1',
                 width: '1',
-                videoId: videoId,
-                playerVars: {
-                    'playsinline': 1
-                },
+                videoId: '5vhXLDXrYJU', // 8월 19일 영상 ID
                 events: {
                     'onReady': onPlayerReady,
                     'onStateChange': onPlayerStateChange
@@ -574,31 +716,40 @@
             });
         }
 
+        // 3. 플레이어 준비 완료 시
+        const playPauseBtn = document.getElementById('play-pause-btn');
         function onPlayerReady(event) {
-            audioControlButton.disabled = false;
-            audioControlButton.textContent = '오늘의 말씀듣기 ▶';
+            playPauseBtn.disabled = false;
+            playPauseBtn.textContent = '오늘의 말씀듣기 ▶';
         }
 
-        audioControlButton.addEventListener('click', () => {
-            if (player && typeof player.getPlayerState === 'function') {
-                const playerState = player.getPlayerState();
-                if (playerState === YT.PlayerState.PLAYING) {
-                    player.pauseVideo();
-                } else {
-                    player.playVideo();
-                }
+        // 4. 재생/일시정지 버튼 제어
+        let isPlaying = false;
+        playPauseBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                player.pauseVideo();
+            } else {
+                player.playVideo();
             }
         });
 
+        // 5. 플레이어 상태 변경 감지
         function onPlayerStateChange(event) {
             if (event.data == YT.PlayerState.PLAYING) {
+                playPauseBtn.textContent = '오늘의 말씀듣기 ❚❚';
                 isPlaying = true;
-                audioControlButton.textContent = '오늘의 말씀듣기 ❚❚';
             } else {
+                playPauseBtn.textContent = '오늘의 말씀듣기 ▶';
                 isPlaying = false;
-                audioControlButton.textContent = '오늘의 말씀듣기 ▶';
             }
         }
+        
+        // 6. 관통하는 주제를 h1 제목에 동적으로 삽입
+        document.addEventListener('DOMContentLoaded', function() {
+            const theme = "하나님의 주권적 선택과 구원: 언약 백성을 향한 신실한 구원과 교만한 자를 향한 공의로운 심판";
+            const mainTitle = document.getElementById('main-title');
+            mainTitle.innerHTML = `8월 19일 맥체인 성경읽기<br><span class="subtitle">${theme}</span>`;
+        });
     </script>
 </body>
 </html>
